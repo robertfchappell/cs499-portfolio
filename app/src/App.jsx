@@ -219,13 +219,6 @@ const artifactCards = [
     icon: <FaFileWord />,
     description: 'Narrative describing database design and optimization work.',
   },
-  {
-    title: 'Resume',
-    type: 'Pending',
-    href: '#contact',
-    icon: <FaFilePdf />,
-    description: 'Professional resume link will be added after the final resume file is provided.',
-  },
 ];
 
 const contactLinks = [
