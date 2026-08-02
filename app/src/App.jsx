@@ -11,6 +11,7 @@ import {
   FaExternalLinkAlt,
   FaFileArchive,
   FaFilePdf,
+  FaFileWord,
   FaGithub,
   FaGraduationCap,
   FaLayerGroup,
@@ -18,6 +19,7 @@ import {
   FaReact,
   FaServer,
   FaTools,
+  FaVideo,
 } from 'react-icons/fa';
 
 const navItems = [
@@ -64,57 +66,52 @@ const skillGroups = [
 const assessmentSections = [
   {
     eyebrow: '01',
-    title: 'Professional Growth',
+    title: 'Program Growth and Confidence',
     body: [
-      "My Bachelor of Science in Computer Science program at Southern New Hampshire University has helped me connect academic computer science concepts with the professional engineering work I perform in enterprise environments. Across the program, I strengthened my ability to analyze requirements, evaluate tradeoffs, write maintainable code, and communicate technical decisions clearly to both technical and nontechnical audiences.",
-      "The capstone experience gave me the opportunity to revisit previous work with a more mature engineering perspective. Instead of viewing a project as complete after it runs, I evaluated how the architecture, data model, algorithms, validation strategy, and user experience could be improved for long-term support. That reflection is central to how I now approach software development: reliable solutions require thoughtful design, measurable improvement, and a willingness to refine earlier decisions.",
+      "Getting my Bachelor of Science in Computer Science has made me more confident. During the program, I learned how to do software engineering, databases, algorithms, data structures, software tests, secure coding, networking, systems design, and making mobile apps. Each class taught me something new on its own, but the final project put all of those skills together into a single work that shows how much I've learned in terms of technology. By making my ePortfolio, I was able to look over old work, find things that could be done better, and use what I've learned in the class to make a more complete and professional software application. This process has helped me build a portfolio that shows potential employers what I can do and set me up for further career growth.",
     ],
   },
   {
     eyebrow: '02',
     title: 'Collaboration and Communication',
     body: [
-      "My professional role as a Senior Digital Associate at Amgen has reinforced the importance of stakeholder collaboration throughout the software development lifecycle. I regularly work with business partners to understand operational needs, translate those needs into technical requirements, and deliver applications and automation that support enterprise workflows.",
-      "The Computer Science program strengthened that same communication discipline by requiring clear documentation, structured project narratives, and thoughtful code review. I learned to explain not only what a solution does, but why a design choice is appropriate, how it supports maintainability, and how it creates value for users.",
+      'One of the most important things I learned in the program was how important it is to work together and talk to each other. Software development rarely happens by itself, and for projects to be successful, developers, managers, and business partners must be able to talk to each other clearly. As part of my coursework, I had peer discussions, code reviews, project planning, and wrote technical documentation that stressed how to clearly explain technical ideas to different groups of people. In my current job, I regularly work with business stakeholders to understand their needs, come up with solutions, create software, test applications, and offer ongoing support after the software has been deployed. These events made me realize that along with technical understanding, good communication skills are also needed for software projects to be successful.',
     ],
   },
   {
     eyebrow: '03',
     title: 'Software Engineering and Design',
     body: [
-      "The software design enhancement in this portfolio focuses on improving an Inventory Management Android Application originally created in CS360. The enhancement emphasized maintainability, reusable components, validation, error handling, and clearer separation of responsibilities. These changes make the application easier to understand, test, and expand.",
-      "This work reflects an important shift in my development approach. I now evaluate code for readability, adaptability, fault tolerance, and production support, not just for basic functionality. That mindset aligns directly with the enterprise application development work I perform using Power Apps, Power Automate, React, Node.js, SQL, and Databricks.",
+      'The Computer Science program also helped me learn more about the basics of software engineering. Planning, the software development life cycle, object-oriented programming, testing, maintainability, and safe coding were all stressed in different courses. These ideas are shown in my capstone project, which is an improvement to my Android Inventory Management app that makes it better structured, usable, valid, and easy to manage. Instead of just adding new features, I worked on making the app more reliable and easy to manage by adding full CRUD functionality, making validation better, handling errors better, and separating the code into parts that can be used again and again. These changes are examples of good software engineering techniques that can be used in the real world.',
     ],
   },
   {
     eyebrow: '04',
     title: 'Algorithms and Data Structures',
     body: [
-      "The algorithms and data structures enhancement focused on improving how inventory records are represented, searched, sorted, and organized. By using a clearer InventoryItem object model and improving data handling patterns, the application became easier to reason about and more efficient for common user actions.",
-      "This enhancement demonstrates my ability to choose structures that support the behavior of the application. In professional software work, data organization directly affects usability, performance, debugging, and maintainability. The skills developed through this enhancement translate to broader data engineering work, where clean structure and efficient querying are essential.",
+      'Algorithms and data structures were another important area of growth. During the program, I learned how choosing the right data structures and making algorithms that work well can make applications run faster and be easier to manage. As part of my capstone project, I switched out parallel collections for an object-oriented InventoryItem class. This made it easier to handle inventory data. I also added searching and multiple sorting choices that made the application easier to use and made managing inventory records faster. These changes showed that careful choices about algorithms and data structures can improve both the quality of software and the experience of using it.',
     ],
   },
   {
     eyebrow: '05',
     title: 'Databases and Data Engineering',
     body: [
-      "The database enhancement strengthened the application's SQLite implementation through schema improvements, indexes, transactions, parameterized SQL, timestamp fields, aggregate queries, and database optimization. These changes improved reliability, data integrity, query performance, and long-term maintainability.",
-      "This area connects strongly to my professional experience with SQL, Databricks, Unity Catalog, and enterprise data solutions. I understand that database design is not simply a storage concern; it shapes application reliability, reporting capability, security posture, and operational scalability.",
+      'Managing and designing databases became another important skill I gained through my coursework. I learned SQL, relational databases, and database normalization, which helped me build a better SQLite database for my capstone project. For the database enhancement, I added timestamp fields to the database schema, set up logic for database migration, added indexes to speed up queries, changed searching to parameterized SQL queries, made aggregate database functions, set up transactions to protect data integrity, and turned database operations that were done over and over into methods that could be used again. These improvements showed that good database design is more than just storing data; it also includes keeping data safe, making programs run faster, and making sure that they can be updated as they get bigger.',
     ],
   },
   {
     eyebrow: '06',
-    title: 'Security, Testing, and Quality',
+    title: 'Security and Quality Mindset',
     body: [
-      "Throughout the program and capstone enhancements, I continued to develop a stronger quality mindset. Validation, error handling, parameterized queries, and testing are all part of building software that users can trust. Secure and reliable systems require defensive design choices at the interface, application, and database layers.",
-      "My professional work also requires testing, deployment planning, maintenance, and support after release. The capstone portfolio reflects that same lifecycle awareness by showing how a project can evolve from an academic artifact into a more professional, maintainable application.",
+      "Another important thing that came out of the Computer Science school was the development of a security mindset. Instead of adding security as an afterthought, secure software needs to be carefully planned at every stage of development. Ideas like input validation, secure authentication, parameterized queries, and defensive programming techniques were taught in classes like Secure Coding. I used these ideas in my capstone improvements by checking user input, using parameterized database queries, handling exceptions better, keeping the database's integrity through transactions, and thinking about how changes in the future might impact the app's overall security and maintainability. These techniques help make software more reliable by lowering the number of security holes it has.",
     ],
   },
   {
     eyebrow: '07',
-    title: 'Forward Direction',
+    title: 'Portfolio Outcomes and Career Readiness',
     body: [
-      "Completing this portfolio represents both a milestone and a starting point. My goal is to continue building solutions across enterprise software development, automation, cloud computing, artificial intelligence, and data engineering. I plan to begin the Master of Science in Computer Science program after completing the bachelor's degree so I can continue deepening my technical foundation and expanding my ability to design modern software systems.",
+      "The things in my ePortfolio show how my knowledge has grown as I've gone through the Computer Science school. The review of the code gives an overview of the original application and finds ways to make it better. The improvement in software engineering shows better software design, usefulness, validation, and maintainability. The improvements to algorithms and data structures focus on better searching and sorting, as well as better organization of program data. The database upgrade shows more advanced database design by making the schema better and by improving queries, indexing, transactions, and data management. These improvements show how different areas of computer science work together to make software that is reliable, easy to maintain, and effective.",
+      "Getting this degree has helped me get ready for the next step in my work. I learned both technical and professional skills that are directly useful in modern software development during the program. I can evaluate existing software, find ways to make it better, make improvements that matter, and communicate technical decisions clearly thanks to the experience I got through this capstone. I will keep building on the skills I've learned in this Computer Science program as I go to graduate school and move up in my career as a software engineer and data engineer. The information and experiences in this ePortfolio show not only what I learned in college, but also how committed I am to continuing to learn and grow as a worker.",
     ],
   },
 ];
@@ -182,52 +179,52 @@ const artifactCards = [
   },
   {
     title: 'Code Review',
-    type: 'PDF Placeholder',
-    href: 'artifacts/code-review.pdf',
-    icon: <FaFilePdf />,
+    type: 'MP4 Video',
+    href: 'artifacts/CS499- Code Review Robert Chappell.mp4',
+    icon: <FaVideo />,
     description: 'Code review walkthrough and enhancement planning artifact.',
   },
   {
     title: 'Original Artifact',
-    type: 'ZIP Placeholder',
-    href: 'artifacts/original-artifact.zip',
+    type: 'ZIP Archive',
+    href: 'artifacts/InventoryApp - Robert (Original).zip',
     icon: <FaFileArchive />,
     description: 'Original CS360 Inventory Management Android Application.',
   },
   {
     title: 'Enhanced Artifact',
-    type: 'ZIP Placeholder',
-    href: 'artifacts/enhanced-artifact.zip',
+    type: 'ZIP Archive',
+    href: 'artifacts/InventoryApp - Robert (Enhanced).zip',
     icon: <FaFileArchive />,
     description: 'Enhanced capstone version with design, algorithm, and database improvements.',
   },
   {
     title: 'Software Design Narrative',
-    type: 'PDF Placeholder',
-    href: 'artifacts/software-design-narrative.pdf',
-    icon: <FaFilePdf />,
+    type: 'DOCX Narrative',
+    href: 'artifacts/Milestone Two Narrative Chappell Robert.docx',
+    icon: <FaFileWord />,
     description: 'Narrative describing the software engineering and design enhancement.',
   },
   {
     title: 'Algorithms Narrative',
-    type: 'PDF Placeholder',
-    href: 'artifacts/algorithms-narrative.pdf',
-    icon: <FaFilePdf />,
+    type: 'DOCX Narrative',
+    href: 'artifacts/CS499 Milestone Three Narrative - Chappell Robert.docx',
+    icon: <FaFileWord />,
     description: 'Narrative describing algorithm and data structure improvements.',
   },
   {
     title: 'Database Narrative',
-    type: 'PDF Placeholder',
-    href: 'artifacts/database-narrative.pdf',
-    icon: <FaFilePdf />,
+    type: 'DOCX Narrative',
+    href: 'artifacts/Milestone Four Narrative.docx',
+    icon: <FaFileWord />,
     description: 'Narrative describing database design and optimization work.',
   },
   {
     title: 'Resume',
-    type: 'PDF Placeholder',
-    href: 'artifacts/resume.pdf',
+    type: 'Pending',
+    href: '#contact',
     icon: <FaFilePdf />,
-    description: 'Professional resume placeholder for the final portfolio.',
+    description: 'Professional resume link will be added after the final resume file is provided.',
   },
 ];
 
@@ -239,12 +236,12 @@ const contactLinks = [
   },
   {
     label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/replace-with-your-profile',
+    href: 'https://www.linkedin.com/in/robert-chappell-92026221a/',
     icon: <FaLinkedin />,
   },
   {
     label: 'Email',
-    href: 'mailto:replace-with-your-email@example.com',
+    href: 'mailto:robertfchappell@gmail.com',
     icon: <FaEnvelope />,
   },
 ];
