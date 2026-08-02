@@ -7,6 +7,7 @@ import {
   FaChartLine,
   FaCode,
   FaDatabase,
+  FaDownload,
   FaEnvelope,
   FaExternalLinkAlt,
   FaFileArchive,
@@ -21,6 +22,9 @@ import {
   FaTools,
   FaVideo,
 } from 'react-icons/fa';
+import editInventoryItem from './assets/screenshots/edit-inventory-item.png';
+import inventoryDashboard from './assets/screenshots/inventory-dashboard.png';
+import loginScreen from './assets/screenshots/login-screen.png';
 
 const navItems = [
   { id: 'home', label: 'Home' },
@@ -135,16 +139,22 @@ const enhancementCards = [
   {
     title: 'Software Design Enhancement',
     icon: <FaLayerGroup />,
-    description:
-      'Refined the application structure to improve reliability, support future features, and reduce maintenance friction.',
-    items: ['CRUD', 'Validation', 'Error Handling', 'Maintainability', 'Reusable Components'],
+    narrativeHref: 'artifacts/Milestone Two Narrative Chappell Robert.docx',
+    summary: [
+      'The software design enhancement expanded the Inventory Management Android Application into a more complete, maintainable application experience. The work focused on full CRUD functionality, stronger input validation, clearer error handling, and reusable application components that make the code easier to understand and support.',
+      'This enhancement demonstrates practical software engineering skills, including object-oriented design, user-centered interface flow, defensive programming, and maintainable component structure. By improving reliability and reducing duplicated logic, the application becomes easier to test, extend, and maintain over time.',
+    ],
+    skills: ['CRUD', 'Validation', 'Error Handling', 'Maintainability', 'Reusable Components'],
   },
   {
     title: 'Algorithms & Data Structures',
     icon: <FaChartLine />,
-    description:
-      'Improved how inventory records are modeled, organized, searched, and sorted for clearer application behavior.',
-    items: [
+    narrativeHref: 'artifacts/CS499 Milestone Three Narrative - Chappell Robert.docx',
+    summary: [
+      'The algorithms and data structures enhancement improved how inventory information is represented, searched, sorted, and displayed. Replacing loosely related data collections with a structured InventoryItem object made the application data easier to manage and reduced the complexity of inventory operations.',
+      'This work demonstrates the ability to choose appropriate data structures, design efficient search and sort behavior, and organize application data around real user workflows. The result is a faster, clearer, and more scalable inventory experience for users managing multiple records.',
+    ],
+    skills: [
       'InventoryItem Object',
       'Search',
       'Sort',
@@ -155,9 +165,12 @@ const enhancementCards = [
   {
     title: 'Database Enhancement',
     icon: <FaDatabase />,
-    description:
-      'Strengthened persistence, query performance, and data integrity through a more deliberate SQLite design.',
-    items: [
+    narrativeHref: 'artifacts/Milestone Four Narrative.docx',
+    summary: [
+      'The database enhancement strengthened the application persistence layer by improving the SQLite schema, adding timestamp fields, supporting migrations, indexing frequently queried data, and using parameterized SQL. Transactions and reusable database methods were also added to better protect data integrity.',
+      'This enhancement demonstrates relational database design, query optimization, secure SQL practices, and data engineering discipline. The improvements make the app more reliable, safer to update, and better prepared for reporting, filtering, and future feature growth.',
+    ],
+    skills: [
       'SQLite Schema Improvements',
       'Indexes',
       'Transactions',
@@ -166,6 +179,28 @@ const enhancementCards = [
       'Aggregate Queries',
       'Database Optimization',
     ],
+  },
+];
+
+const screenshotGallery = [
+  {
+    title: 'Login Screen',
+    image: loginScreen,
+    captions: ['Login Screen'],
+    description: 'Authentication entry point with username, password, and account creation flows.',
+  },
+  {
+    title: 'Inventory Dashboard',
+    image: inventoryDashboard,
+    captions: ['Inventory Dashboard', 'Add Inventory Item', 'Search and Sort Features'],
+    description:
+      'Main inventory workspace with item creation, live search, sorting, item state, and SMS alert access.',
+  },
+  {
+    title: 'Edit Inventory Item',
+    image: editInventoryItem,
+    captions: ['Edit Inventory Item'],
+    description: 'Focused edit dialog for changing item details, saving updates, canceling, or deleting an item.',
   },
 ];
 
@@ -491,14 +526,50 @@ function App() {
               <article className="enhancement-card" data-reveal key={card.title}>
                 <div className="card-icon">{card.icon}</div>
                 <h3>{card.title}</h3>
-                <p>{card.description}</p>
-                <ul>
-                  {card.items.map((item) => (
-                    <li key={item}>{item}</li>
+                <div className="enhancement-summary">
+                  {card.summary.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
                   ))}
-                </ul>
+                </div>
+                <div className="skill-tags compact">
+                  {card.skills.map((skill) => (
+                    <span key={skill}>{skill}</span>
+                  ))}
+                </div>
+                <div className="enhancement-actions">
+                  <a className="text-button" href={card.narrativeHref} target="_blank" rel="noreferrer">
+                    View Full Narrative <FaExternalLinkAlt />
+                  </a>
+                  <a className="text-button" href={card.narrativeHref} download>
+                    Download Narrative <FaDownload />
+                  </a>
+                </div>
               </article>
             ))}
+          </div>
+          <div className="screenshot-showcase" data-reveal>
+            <div className="showcase-heading">
+              <p className="eyebrow">Application Screenshots</p>
+              <h3>Android inventory workflows in context.</h3>
+            </div>
+            <div className="screenshot-gallery" aria-label="Inventory application screenshots">
+              {screenshotGallery.map((screenshot) => (
+                <article className="screenshot-card" key={screenshot.title}>
+                  <div className="phone-frame">
+                    <img src={screenshot.image} alt={`${screenshot.title} screenshot`} />
+                  </div>
+                  <div className="screenshot-copy">
+                    <h4>{screenshot.title}</h4>
+                    <p>{screenshot.description}</p>
+                    <div className="screenshot-captions">
+                      {screenshot.captions.map((caption) => (
+                        <span key={caption}>{caption}</span>
+                      ))}
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -514,6 +585,7 @@ function App() {
                 data-reveal
                 href={artifact.href}
                 key={artifact.title}
+                download={artifact.href.startsWith('#') ? undefined : true}
                 target={artifact.href.startsWith('#') ? undefined : '_blank'}
                 rel={artifact.href.startsWith('#') ? undefined : 'noreferrer'}
               >
