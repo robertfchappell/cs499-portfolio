@@ -128,9 +128,9 @@ a {
 .hero {
   position: relative;
   display: grid;
-  min-height: 100vh;
+  min-height: clamp(420px, 64vh, 640px);
   align-items: center;
-  padding: 96px 0 32px;
+  padding: 84px 0 54px;
   overflow: hidden;
 }
 
@@ -942,8 +942,9 @@ footer {
   }
 
   .hero {
-    min-height: 100svh;
-    padding-top: 72px;
+    min-height: clamp(360px, 62svh, 520px);
+    padding-top: 56px;
+    padding-bottom: 44px;
   }
 
   .hero-meta,
