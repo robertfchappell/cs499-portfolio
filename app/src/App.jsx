@@ -1,25 +1,15 @@
 import { useEffect, useState } from 'react';
 import {
   FaAndroid,
-  FaArrowRight,
-  FaBolt,
-  FaBriefcase,
   FaChartLine,
-  FaCode,
   FaDatabase,
   FaDownload,
-  FaEnvelope,
   FaExternalLinkAlt,
   FaFileArchive,
   FaFilePdf,
   FaFileWord,
-  FaGithub,
   FaGraduationCap,
   FaLayerGroup,
-  FaLinkedin,
-  FaReact,
-  FaServer,
-  FaTools,
   FaVideo,
 } from 'react-icons/fa';
 import editInventoryItem from './assets/screenshots/edit-inventory-item.png';
@@ -28,43 +18,10 @@ import loginScreen from './assets/screenshots/login-screen.png';
 
 const navItems = [
   { id: 'home', label: 'Home' },
-  { id: 'about', label: 'About' },
   { id: 'self-assessment', label: 'Assessment' },
-  { id: 'skills', label: 'Skills' },
-  { id: 'experience', label: 'Experience' },
   { id: 'capstone', label: 'Capstone' },
   { id: 'artifacts', label: 'Artifacts' },
-  { id: 'contact', label: 'Contact' },
-];
-
-const skillGroups = [
-  {
-    title: 'Programming Languages',
-    icon: <FaCode />,
-    skills: ['Java', 'JavaScript', 'Python', 'SQL', 'C++', 'HTML', 'CSS'],
-  },
-  {
-    title: 'Frameworks',
-    icon: <FaReact />,
-    skills: ['React', 'Node.js', 'npm'],
-  },
-  {
-    title: 'Enterprise',
-    icon: <FaServer />,
-    skills: [
-      'Databricks',
-      'Power Apps',
-      'Power Automate',
-      'Unity Catalog',
-      'SQL Server',
-      'SQLite',
-    ],
-  },
-  {
-    title: 'Developer Tools',
-    icon: <FaTools />,
-    skills: ['Git', 'GitHub', 'Android Studio', 'VS Code'],
-  },
+  { id: 'career', label: 'Career Goals' },
 ];
 
 const assessmentSections = [
@@ -72,7 +29,7 @@ const assessmentSections = [
     eyebrow: '01',
     title: 'Program Growth and Confidence',
     body: [
-      "Getting my Bachelor of Science in Computer Science has made me more confident. During the program, I learned how to do software engineering, databases, algorithms, data structures, software tests, secure coding, networking, systems design, and making mobile apps. Each class taught me something new on its own, but the final project put all of those skills together into a single work that shows how much I've learned in terms of technology. By making my ePortfolio, I was able to look over old work, find things that could be done better, and use what I've learned in the class to make a more complete and professional software application. This process has helped me build a portfolio that shows potential employers what I can do and set me up for further career growth.",
+      "Working toward my Bachelor of Science in Computer Science has made me more confident. During the program, I learned how to do software engineering, databases, algorithms, data structures, software tests, secure coding, networking, systems design, and making mobile apps. Each class taught me something new on its own, but the final project put all of those skills together into a single work that shows how much I've learned in terms of technology. By making my ePortfolio, I was able to look over old work, find things that could be done better, and use what I've learned in the class to make a more complete and professional software application. This process has helped me build a portfolio that shows potential employers what I can do and set me up for further career growth.",
     ],
   },
   {
@@ -115,24 +72,9 @@ const assessmentSections = [
     title: 'Portfolio Outcomes and Career Readiness',
     body: [
       "The things in my ePortfolio show how my knowledge has grown as I've gone through the Computer Science school. The review of the code gives an overview of the original application and finds ways to make it better. The improvement in software engineering shows better software design, usefulness, validation, and maintainability. The improvements to algorithms and data structures focus on better searching and sorting, as well as better organization of program data. The database upgrade shows more advanced database design by making the schema better and by improving queries, indexing, transactions, and data management. These improvements show how different areas of computer science work together to make software that is reliable, easy to maintain, and effective.",
-      "Getting this degree has helped me get ready for the next step in my work. I learned both technical and professional skills that are directly useful in modern software development during the program. I can evaluate existing software, find ways to make it better, make improvements that matter, and communicate technical decisions clearly thanks to the experience I got through this capstone. I will keep building on the skills I've learned in this Computer Science program as I go to graduate school and move up in my career as a software engineer and data engineer. The information and experiences in this ePortfolio show not only what I learned in college, but also how committed I am to continuing to learn and grow as a worker.",
+      "Working toward this degree has helped me get ready for the next step in my work. I learned both technical and professional skills that are directly useful in modern software development during the program. I can evaluate existing software, find ways to make it better, make improvements that matter, and communicate technical decisions clearly thanks to the experience I got through this capstone. I will keep building on the skills I've learned in this Computer Science program as I go to graduate school and move up in my career as a software engineer and data engineer. The information and experiences in this ePortfolio show not only what I learned in college, but also how committed I am to continuing to learn and grow as a worker.",
     ],
   },
-];
-
-const experienceBullets = [
-  'Enterprise Application Development',
-  'Automation',
-  'Power Apps',
-  'Power Automate',
-  'Databricks',
-  'React',
-  'Node.js',
-  'SQL',
-  'Stakeholder collaboration',
-  'Testing',
-  'Deployment',
-  'Maintenance',
 ];
 
 const enhancementCards = [
@@ -256,24 +198,6 @@ const artifactCards = [
   },
 ];
 
-const contactLinks = [
-  {
-    label: 'GitHub',
-    href: 'https://github.com/robertfchappell',
-    icon: <FaGithub />,
-  },
-  {
-    label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/robert-chappell-92026221a/',
-    icon: <FaLinkedin />,
-  },
-  {
-    label: 'Email',
-    href: 'mailto:robertfchappell@gmail.com',
-    icon: <FaEnvelope />,
-  },
-];
-
 function App() {
   const [activeSection, setActiveSection] = useState('home');
 
@@ -352,84 +276,6 @@ function App() {
           <div className="hero-content">
             <p className="eyebrow">Computer Science Capstone Portfolio</p>
             <h1>Robert Chappell</h1>
-            <div className="hero-subtitle">
-              <span>Computer Science Student</span>
-              <span>Senior Digital Associate at Amgen</span>
-              <span>Data Engineer | Enterprise Application Developer | Power Platform Developer</span>
-            </div>
-            <p className="hero-copy">
-              I build enterprise applications, automation, and data solutions that turn complex
-              operational needs into maintainable software.
-            </p>
-            <div className="hero-actions" aria-label="Hero actions">
-              <a className="button primary" href="#capstone">
-                View Capstone <FaArrowRight />
-              </a>
-              <a className="button secondary" href="#contact">
-                Contact Me <FaEnvelope />
-              </a>
-            </div>
-          </div>
-          <div className="hero-meta" data-reveal>
-            <div>
-              <strong>React + Vite</strong>
-              <span>Modern front-end portfolio</span>
-            </div>
-            <div>
-              <strong>Enterprise Systems</strong>
-              <span>Automation, apps, and data</span>
-            </div>
-            <div>
-              <strong>CS499</strong>
-              <span>Capstone enhancements</span>
-            </div>
-          </div>
-        </section>
-
-        <section className="section-shell content-section" id="about">
-          <div className="section-heading" data-reveal>
-            <p className="eyebrow">About Me</p>
-            <h2>Enterprise-minded software development with a data engineering foundation.</h2>
-          </div>
-          <div className="about-grid">
-            <article className="glass-panel about-copy" data-reveal>
-              <p>
-                I am currently completing my Bachelor of Science in Computer Science at Southern
-                New Hampshire University while working as a Senior Digital Associate at Amgen. My
-                professional work focuses on building enterprise software solutions that support
-                operational teams through application development, automation, and data engineering.
-              </p>
-              <p>
-                I work with technologies including Power Apps, Power Automate, Databricks, SQL,
-                React, Node.js, JavaScript, HTML, and CSS. My responsibilities require direct
-                stakeholder collaboration, requirements gathering, solution design, testing,
-                deployment, and long-term maintenance for business-critical applications.
-              </p>
-              <p>
-                This portfolio brings together my academic growth and professional experience. It
-                demonstrates my ability to improve existing software, design better data structures,
-                strengthen database implementations, and communicate technical value in a clear,
-                professional format.
-              </p>
-            </article>
-            <aside className="focus-panel" data-reveal>
-              <div className="focus-item">
-                <FaBolt />
-                <span>Automation strategy and workflow delivery</span>
-              </div>
-              <div className="focus-item">
-                <FaDatabase />
-                <span>Data engineering and SQL-centered problem solving</span>
-              </div>
-              <div className="focus-item">
-                <FaReact />
-                <span>Modern front-end engineering with React</span>
-              </div>
-              <div className="focus-item">
-                <FaBriefcase />
-                <span>Stakeholder-centered enterprise development</span>
-              </div>
-            </aside>
           </div>
         </section>
 
@@ -450,50 +296,6 @@ function App() {
                 </div>
               </article>
             ))}
-          </div>
-        </section>
-
-        <section className="section-shell content-section" id="skills">
-          <div className="section-heading" data-reveal>
-            <p className="eyebrow">Technical Skills</p>
-            <h2>A practical stack for software, automation, and data delivery.</h2>
-          </div>
-          <div className="skills-grid">
-            {skillGroups.map((group) => (
-              <article className="skill-card" data-reveal key={group.title}>
-                <div className="card-icon">{group.icon}</div>
-                <h3>{group.title}</h3>
-                <div className="skill-tags">
-                  {group.skills.map((skill) => (
-                    <span key={skill}>{skill}</span>
-                  ))}
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="section-shell content-section" id="experience">
-          <div className="section-heading" data-reveal>
-            <p className="eyebrow">Professional Experience</p>
-            <h2>Building and supporting enterprise digital solutions.</h2>
-          </div>
-          <div className="timeline" data-reveal>
-            <div className="timeline-marker" aria-hidden="true" />
-            <article className="timeline-card">
-              <div className="timeline-topline">
-                <div>
-                  <h3>Senior Digital Associate</h3>
-                  <p>Amgen</p>
-                </div>
-                <FaBriefcase />
-              </div>
-              <div className="experience-tags">
-                {experienceBullets.map((item) => (
-                  <span key={item}>{item}</span>
-                ))}
-              </div>
-            </article>
           </div>
         </section>
 
@@ -617,22 +419,6 @@ function App() {
               modern organizations.
             </p>
           </article>
-        </section>
-
-        <section className="section-shell content-section contact-section" id="contact">
-          <div className="section-heading" data-reveal>
-            <p className="eyebrow">Contact</p>
-            <h2>Connect for software engineering, automation, and data opportunities.</h2>
-          </div>
-          <div className="contact-grid">
-            {contactLinks.map((link) => (
-              <a className="contact-card" data-reveal href={link.href} key={link.label}>
-                {link.icon}
-                <span>{link.label}</span>
-                <FaExternalLinkAlt />
-              </a>
-            ))}
-          </div>
         </section>
       </main>
 
